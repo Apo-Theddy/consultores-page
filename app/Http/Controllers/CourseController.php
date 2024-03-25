@@ -36,9 +36,10 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $courseId)
     {
-        //
+        $course = Course::where('uuid', $courseId)->first();
+        return view("courses.course-details", compact("course"));
     }
 
     /**
